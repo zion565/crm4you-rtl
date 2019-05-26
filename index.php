@@ -21,7 +21,7 @@ if(isset($_POST['user_email']) && isset($_POST['user_password']))
     error_log("user-pass= ".$user_password);
     
 //extract($_POST);
-$stmt=$db->query("SELECT * FROM tbl_login WHERE email_id='$user_email' && password='$user_password'"); 
+$stmt=$db->query("SELECT * FROM tbl_user WHERE email='$user_email' && password='$user_password'");
 $query_result=$stmt->fetch(PDO::FETCH_ASSOC);
 error_log(print_r($query_result,true));
 if($query_result>0)
